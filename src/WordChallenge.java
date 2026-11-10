@@ -6,9 +6,7 @@ public class WordChallenge extends Challenge {
         "monitor", "castle", "button", "forest", "guitar", "island"
     };
 
-    public WordChallenge() {
-        super("Random Words");
-    }
+    public WordChallenge() { super("Random Words"); }
 
     @Override
     public String generateText() {
@@ -20,8 +18,10 @@ public class WordChallenge extends Challenge {
         return sb.toString();
     }
 
+    @Override public double getMultiplier() { return 1.0; }
+
     @Override
-    public double getMultiplier() {
-        return 1.0;
+    public Boss createBoss() {
+        return new Boss("Word Golem", 120, "word-golem.png", "Easy", 30);
     }
 }

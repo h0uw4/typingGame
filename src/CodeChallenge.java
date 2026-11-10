@@ -8,24 +8,19 @@ public class CodeChallenge extends Challenge {
         "public static void main(String[] args) { }"
     };
 
-    public CodeChallenge() {
-        super("Java Code");
-    }
+    public CodeChallenge() { super("Java Code"); }
 
-    @Override
-    public String generateText() {
-        return pick(SNIPPETS);
-    }
+    @Override public String generateText() { return pick(SNIPPETS); }
+    @Override public double getMultiplier() { return 2.0; }
 
-    @Override
-    public double getMultiplier() {
-        return 2.0;
-    }
-
-    // POLYMORPHISM: code must be accurate, so mistakes are punished harder
     @Override
     public double computeScore(double wpm, double accuracy) {
         double factor = accuracy / 100.0;
         return wpm * factor * factor * getMultiplier();
+    }
+
+    @Override
+    public Boss createBoss() {
+        return new Boss("Code Demon", 350, "code-demon.png", "Hard", 70);
     }
 }

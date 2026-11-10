@@ -19,6 +19,9 @@ public abstract class Challenge {
     // Each challenge decides how hard it is
     public abstract double getMultiplier();
 
+    // Each challenge decides which boss the player fights (POLYMORPHISM)
+    public abstract Boss createBoss();
+
     // Default scoring; subclasses may override it (POLYMORPHISM)
     public double computeScore(double wpm, double accuracy) {
         return wpm * (accuracy / 100.0) * getMultiplier();
