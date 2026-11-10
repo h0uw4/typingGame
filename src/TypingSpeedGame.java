@@ -2,14 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// INHERITANCE: TypingSpeedGame IS-A Game
 public class TypingSpeedGame extends Game {
     private final Scanner in = new Scanner(System.in);
     private final List<Challenge> challenges = new ArrayList<>();
     private Player player;
 
     public TypingSpeedGame() {
-        // POLYMORPHISM: different subclasses stored as the same type
         challenges.add(new WordChallenge());
         challenges.add(new SentenceChallenge());
         challenges.add(new CodeChallenge());

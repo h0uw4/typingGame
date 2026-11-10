@@ -1,7 +1,5 @@
-// ABSTRACTION: defines what every game must do, not how
 public abstract class Game {
 
-    // Template method: fixed order of steps, subclasses fill in the details
     public final void run() {
         showWelcome();
         start();

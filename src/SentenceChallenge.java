@@ -1,4 +1,3 @@
-// INHERITANCE: SentenceChallenge IS-A Challenge
 public class SentenceChallenge extends Challenge {
     private static final String[] SENTENCES = {
         "The quick brown fox jumps over the lazy dog.",
@@ -8,13 +7,17 @@ public class SentenceChallenge extends Challenge {
         "Good code is its own best documentation."
     };
 
-    public SentenceChallenge() { super("Sentences"); }
-
-    @Override public String generateText() { return pick(SENTENCES); }
-    @Override public double getMultiplier() { return 1.5; }
+    public SentenceChallenge() {
+        super("Sentences");
+    }
 
     @Override
-    public Boss createBoss() {
-        return new Boss("Sentence Dragon", 250, "sentence-dragon.png", "Medium", 50);
+    public String generateText() {
+        return pick(SENTENCES);
+    }
+
+    @Override
+    public double getMultiplier() {
+        return 1.5;
     }
 }

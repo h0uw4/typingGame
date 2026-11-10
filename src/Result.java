@@ -1,4 +1,3 @@
-// ENCAPSULATION: private final fields, read-only access through getters
 public class Result {
     private final double wpm;
     private final double accuracy;

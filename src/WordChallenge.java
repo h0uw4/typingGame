@@ -1,4 +1,3 @@
-// INHERITANCE: WordChallenge IS-A Challenge
 public class WordChallenge extends Challenge {
     private static final String[] WORDS = {
         "apple", "river", "keyboard", "planet", "orange", "window", "coffee",
@@ -6,7 +5,9 @@ public class WordChallenge extends Challenge {
         "monitor", "castle", "button", "forest", "guitar", "island"
     };
 
-    public WordChallenge() { super("Random Words"); }
+    public WordChallenge() {
+        super("Random Words");
+    }
 
     @Override
     public String generateText() {
@@ -18,10 +19,8 @@ public class WordChallenge extends Challenge {
         return sb.toString();
     }
 
-    @Override public double getMultiplier() { return 1.0; }
-
     @Override
-    public Boss createBoss() {
-        return new Boss("Word Golem", 120, "word-golem.png", "Easy", 30);
+    public double getMultiplier() {
+        return 1.0;
     }
 }
