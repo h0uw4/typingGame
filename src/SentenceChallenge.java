@@ -8,17 +8,13 @@ public class SentenceChallenge extends Challenge {
         "Good code is its own best documentation."
     };
 
-    public SentenceChallenge() {
-        super("Sentences");
-    }
+    public SentenceChallenge() { super("Sentences"); }
+
+    @Override public String generateText() { return pick(SENTENCES); }
+    @Override public double getMultiplier() { return 1.5; }
 
     @Override
-    public String generateText() {
-        return pick(SENTENCES);
-    }
-
-    @Override
-    public double getMultiplier() {
-        return 1.5;
+    public Boss createBoss() {
+        return new Boss("Sentence Dragon", 250, "sentence-dragon.png", "Medium", 50);
     }
 }
